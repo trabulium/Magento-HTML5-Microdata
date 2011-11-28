@@ -61,7 +61,7 @@
     <?php endif ?>
 
     <?php if($this->getLastPageNum()>1): ?>
-    <div class="pages">
+    <nav class="pages">
         <strong><?php echo $this->__('Page:') ?></strong>
         <ol>
         <?php if (!$this->isFirstPage()): ?>
@@ -114,7 +114,7 @@
         <?php endif;?>
         </ol>
 
-    </div>
+    </nav>
     <?php endif; ?>
 
     <?php if($this->getUseContainer()): ?>
