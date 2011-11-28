@@ -42,7 +42,9 @@
             <address><?php echo nl2br($this->htmlEscape($this->getPrintLogoText())) ?></address>
         <?php endif;?>
     </div>
-    <?php echo $this->getChildHtml('content') ?>
+    <section>
+        <?php echo $this->getChildHtml('content') ?>
+    </section>
     <div class="buttons-set">
         <button type="button" title="<?php echo $this->__('Close Window') ?>" class="button" onclick="window.close();"><span><span><?php echo $this->__('Close Window') ?></span></span></button>
     </div>
