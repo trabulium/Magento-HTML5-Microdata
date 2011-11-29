@@ -27,8 +27,8 @@
 <?php if ($this->getReviewsCount()): ?>
     <div class="ratings"  <?php echo (isset($flag) && $flag?'':'itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"');?>>
         <?php if ($this->getRatingSummary()):?>
-             <?php echo (isset($flag) && $flag?'':'<meta itemprop="ratingValue content="'. ceil($this->getRatingSummary())/20.'">
-            <meta itemprop="reviewCount ratingCount" content="'.$this->getReviewsCount().'">')?>
+             <?php echo (isset($flag) && $flag?'':'<meta itemprop="ratingValue content="'. ceil($this->getRatingSummary())/20.'">'.
+            '<meta itemprop="reviewCount ratingCount" content="'.$this->getReviewsCount().'">')?>
             <div class="rating-box">
                 <div class="rating" style="width:<?php echo $this->getRatingSummary() ?>%"></div>
             </div>
