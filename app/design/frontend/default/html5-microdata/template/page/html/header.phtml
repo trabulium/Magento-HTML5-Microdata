@@ -28,7 +28,7 @@
  */
 ?>
 <header class="header">
-    <hgroup itemprop="sourceOrganization" itemscope itemtype="http://schema.org/Organization">
+    <hgroup itemscope itemtype="http://schema.org/Organization">
     <?php if ($this->getIsHomePage()):?>
         <h1 class="logo"><strong itemprop="name"><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img itemprop="image" src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
     <?php else:?>
