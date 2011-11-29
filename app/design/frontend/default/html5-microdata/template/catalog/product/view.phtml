@@ -37,7 +37,7 @@
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
-<div class="product-view">
+<article class="product-view" itemscope itemtype="http://schema.org/Product">
     <div class="product-essential">
     <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
         <div class="no-display">
@@ -47,7 +47,7 @@
 
         <div class="product-shop">
             <div class="product-name">
-                <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+                <h1 itemprop="name"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
             </div>
 
             <?php if ($this->canEmailToFriend()): ?>
@@ -80,7 +80,7 @@
             <?php if ($_product->getShortDescription()):?>
                 <div class="short-description">
                     <h2><?php echo $this->__('Quick Overview') ?></h2>
-                    <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
+                    <div class="std" itemprop="description"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
                 </div>
             <?php endif;?>
 
@@ -159,4 +159,4 @@
         <?php echo $this->getChildHtml('upsell_products') ?>
         <?php echo $this->getChildHtml('product_additional_data') ?>
     </div>
-</div>
+</article>

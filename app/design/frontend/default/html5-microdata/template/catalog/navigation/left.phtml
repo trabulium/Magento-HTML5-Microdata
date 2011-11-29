@@ -34,7 +34,7 @@
 <?php $_categories = $this->getCurrentChildCategories() ?>
 <?php $_count = is_array($_categories)?count($_categories):$_categories->count(); ?>
 <?php if($_count): ?>
-<div class="block block-layered-nav">
+<section class="block block-layered-nav">
     <div class="block-title">
         <strong><span><?php echo $this->__('Browse By') ?></span></strong>
     </div>
@@ -55,5 +55,5 @@
         </dl>
         <script type="text/javascript">decorateDataList('narrow-by-list2')</script>
     </div>
-</div>
+</section>
 <?php endif; ?>

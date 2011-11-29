@@ -30,10 +30,18 @@
  */
 ?>
 <?php $_items = $this->getCollection(); ?>
+<?php $md['scope'] = '';?>
+<?php $md['name'] = '';?>
+<?php $md['url'] = '';?>
+<?php if(this->getTitle() == ' Products'):?>
+    <?php $md['scope'] = ' itemscope itemtype="http://schema.org/Product"';?>
+    <?php $md['name'] = ' itemprop="name"';?>
+    <?php $md['url'] = ' itemprop="url"';?>
+<?php endif ?>
 <?php if($_items->getSize()): ?>
     <ul class="sitemap">
         <?php foreach ($_items as $_item): ?>
-            <li><a href="<?php echo $this->getItemUrl($_item) ?>"><?php echo $_item->name ?></a></li>
+            <li<?php echo $md['scope']?>><a<?php echo $md['url']?> href="<?php echo $this->getItemUrl($_item) ?>"><span<?php echo $md['name']?>><?php echo $_item->name ?></span></a></li>
         <?php endforeach; ?>
     </ul>
 <?php else: ?>

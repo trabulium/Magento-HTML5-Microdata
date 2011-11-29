@@ -28,7 +28,7 @@
  * @deprecated  after 1.4.0.0-alpha3
  */
 ?>
-<div class="price-box" id="product_price">
+<div class="price-box" id="product_price" itemprop="offer" itemscope itemtype="http://schema.org/Offer">
     <p class="old-price"><?php echo $this->__('Old Price:') ?> <?php echo $this->getPrice() ?></p>
-    <p class="special-price"><?php echo $this->getPrice() ?></p>
+    <p class="special-price" itemprop="price"><?php echo $this->getPrice() ?></p>
 </div>

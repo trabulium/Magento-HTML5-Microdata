@@ -27,10 +27,12 @@
 <?php /* @var $this Mage_Catalog_Block_Product_View_Abstract */?>
 <?php $_product = $this->getProduct() ?>
 
+<div itemscope itemtype="http://schema.org/Offer">
 <?php if ($_product->isAvailable()): ?>
-    <p class="availability in-stock"><?php echo $this->__('Availability:') ?> <span><?php echo $this->__('In stock') ?></span></p>
+    <p class="availability in-stock"><?php echo $this->__('Availability:') ?> <span itemprop="availability"><?php echo $this->__('In stock') ?></span></p>
 <?php else: ?>
-    <p class="availability out-of-stock"><?php echo $this->__('Availability:') ?> <span><?php echo $this->__('Out of stock') ?></span></p>
+    <p class="availability out-of-stock"><?php echo $this->__('Availability:') ?> <span itemprop="availability"><?php echo $this->__('Out of stock') ?></span></p>
 <?php endif; ?>
-<?php echo $this->getChildHtml('product_type_data_extra') ?>
+</div>
 <?php echo $this->getPriceHtml($_product) ?>
+<?php echo $this->getChildHtml('product_type_data_extra') ?>
