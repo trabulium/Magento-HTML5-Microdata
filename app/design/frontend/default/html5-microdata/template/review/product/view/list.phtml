@@ -54,7 +54,7 @@
                             </td>
                         </tr>
                         <?php endforeach; ?>
-                        <meta itemprop="reviewRating" value="<?php echo $aggr/count($_votes)?>">
+                        <meta itemprop="reviewRating" value="<?php echo ceil($aggr/count($_votes))/20?>">
                     </tbody>
                 </table>
                 <?php endif; ?>
