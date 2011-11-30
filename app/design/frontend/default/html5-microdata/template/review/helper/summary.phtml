@@ -23,14 +23,13 @@
  * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
-print_r($this->getParentName());
 ?>
 <?php if ($this->getReviewsCount()): ?>
-    <div class="ratings"  <?php echo (isset($flag) && $flag?'':'itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"');?>>
+    <div class="ratings"  <?php echo (Mage::registry('nomd')?'':'itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"');?>>
         <?php if ($this->getRatingSummary()):?>
              <?php $md['rated'] = ceil($this->getRatingSummary())/20;
              $md['reviews'] = $this->getReviewsCount();?>
-             <?php echo (isset($flag) && $flag?'':'<meta itemprop="ratingValue" content="'. $md['rated'] .'"><meta itemprop="reviewCount ratingCount" content="'. $md['reviews'] .'">')?>
+             <?php echo (Mage::registry('nomd')?'':'<meta itemprop="ratingValue" content="'. $md['rated'] .'"><meta itemprop="reviewCount ratingCount" content="'. $md['reviews'] .'">')?>
             <div class="rating-box">
                 <div class="rating" style="width:<?php echo $this->getRatingSummary() ?>%"></div>
             </div>
